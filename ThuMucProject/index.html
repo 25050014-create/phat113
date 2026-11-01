@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberPortfolio // Phan Tấn Phát</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Canvas Background Layer -->
+    <canvas id="matrix-canvas"></canvas>
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="#about" class="logo">
+                <i class="fas fa-terminal"></i> TANPHAT<span>.DEV</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about" class="nav-item active">Giới-thiệu</a></li>
+                <li><a href="#skills" class="nav-item">Kỹ-năng</a></li>
+                <li><a href="#experience" class="nav-item">Học-vấn</a></li>
+                <li><a href="#projects" class="nav-item">Dự-án</a></li>
+                <li><a href="#cli" class="nav-item">Terminal</a></li>
+                <li><a href="#achievements" class="nav-item">Chứng-chỉ</a></li>
+                <li><a href="#contact" class="nav-item">Liên-hệ</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button id="sound-toggle" class="icon-btn" title="Bật/Tắt Âm Thanh FX"><i class="fas fa-volume-mute"></i></button>
+                <button id="effect-toggle" class="icon-btn" title="Bật/Tắt Hiệu Ứng Matrix Rain"><i class="fas fa-wand-magic-sparkles"></i></button>
+                <button id="theme-toggle" class="icon-btn" title="Đổi giao diện"><i class="fas fa-sun"></i></button>
+                <button id="menu-toggle" class="icon-btn hamburger" title="Menu"><i class="fas fa-bars"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Banner / Giới thiệu bản thân -->
+        <section id="about" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-avatar-box">
+                    <div class="glitch-avatar">
+                        <img src="images/ảnh.png" alt="Phan Tấn Phát Avatar">
+                        <div class="avatar-frame"></div>
+                    </div>
+                </div>
+                
+                <div class="hero-content">
+                    <div class="sys-status"><span class="status-dot"></span> SYSTEM ONLINE // WELCOME</div>
+                    <h1 class="glitch-text">Phan Tấn Phát</h1>
+                    <h2 class="typing-text"><span id="typed"></span><span class="cursor">&nbsp;</span></h2>
+                    
+                    <p class="bio-text">
+                        Sinh viên năm 2 ngành Công nghệ Thông tin tại Đại học Bình Dương. Đam mê nghiên cứu, thiết kế và xây dựng các hệ thống giao diện Web thế hệ mới với hiệu năng cao và trải nghiệm người dùng tối ưu.
+                    </p>
+
+                    <!-- Mục tiêu nghề nghiệp -->
+                    <div class="goal-terminal">
+                        <div class="terminal-header">
+                            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                            <span class="term-title">career_goal.sh</span>
+                        </div>
+                        <div class="terminal-body">
+                            <code>$ target --role "Senior Full-Stack Engineer" --time "2029"</code>
+                            <p>> Tốt nghiệp đúng hạn với tấm bằng loại Giỏi, trở thành Full-Stack Developer chuyên nghiệp và đóng góp vào các dự án phần mềm quy mô lớn.</p>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="#projects" class="cyber-btn primary">KHÁM PHÁ DỰ ÁN <i class="fas fa-arrow-right"></i></a>
+                        <a href="CV_PhanTanPhat.pdf" download class="cyber-btn secondary"><i class="fas fa-file-pdf"></i> TẢI CV (PDF)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kỹ năng chuyên môn -->
+        <section id="skills" class="skills-section">
+            <h2 class="section-title" data-text="KỸ NĂNG CHUYÊN MÔN">KỸ NĂNG CHUYÊN MÔN</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-head"><i class="fab fa-html5"></i> <span>HTML5 / Semantic</span></div>
+                    <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-head"><i class="fab fa-css3-alt"></i> <span>CSS3 / Flex & Grid</span></div>
+                    <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-head"><i class="fab fa-js"></i> <span>JavaScript ES6+</span></div>
+                    <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-head"><i class="fab fa-python"></i> <span>Python</span></div>
+                    <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-head"><i class="fab fa-java"></i> <span>Java / OOP</span></div>
+                    <div class="progress-bar"><div class="progress" style="width: 78%;"></div></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-head"><i class="fab fa-git-alt"></i> <span>Git / GitHub</span></div>
+                    <div class="progress-bar"><div class="progress" style="width: 82%;"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Học vấn & Kinh nghiệm -->
+        <section id="experience" class="exp-section">
+            <h2 class="section-title" data-text="HỌC VẤN & HOẠT ĐỘNG">HỌC VẤN & HOẠT ĐỘNG</h2>
+            
+            <div class="cyber-timeline">
+                <div class="timeline-node">
+                    <div class="node-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="node-content">
+                        <span class="node-date">2025 - 2029</span>
+                        <h3>Đại Học Bình Dương</h3>
+                        <h4>Sinh viên năm 2 - Cử nhân Công nghệ Thông tin (GPA: 3.6/4.0)</h4>
+                        <p>Chuyên ngành Kỹ thuật Phần mềm. Đạt danh hiệu Sinh viên xuất sắc trong các học kỳ vừa qua và tích cực tham gia các đề tài nghiên cứu nhỏ.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-node">
+                    <div class="node-icon"><i class="fas fa-users-cog"></i></div>
+                    <div class="node-content">
+                        <span class="node-date">2026 - HIỆN TẠI</span>
+                        <h3>Thành Viên Ban Kỹ Thuật - WebDev Club</h3>
+                        <h4>Hoạt động ngoại khóa & Dự án cộng đồng</h4>
+                        <p>Hỗ trợ tổ chức các buổi học lập trình Web cơ bản cho tân sinh viên khóa dưới, tham gia xây dựng các giao diện mẫu cho câu lạc bộ.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dự án cá nhân -->
+        <section id="projects" class="projects-section">
+            <h2 class="section-title" data-text="DỰ ÁN CÁ NHÂN">DỰ ÁN CÁ NHÂN</h2>
+            
+            <div class="filter-tabs">
+                <button class="tab-btn active" data-filter="all">TẤT CẢ</button>
+                <button class="tab-btn" data-filter="web">WEB APP</button>
+                <button class="tab-btn" data-filter="tool">CÔNG CỤ</button>
+            </div>
+
+            <div class="projects-grid">
+                <article class="project-card" data-category="web">
+                    <div class="card-thumb">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" alt="Cyber Dashboard">
+                        <div class="card-overlay">
+                            <button class="quick-view-btn" data-modal="modal-1"><i class="fas fa-expand"></i> XEM CHI TIẾT</button>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag">Web App</span>
+                        <h3>Cyberpunk Dashboard UI</h3>
+                        <p>Giao diện quản trị hệ thống phong cách sci-fi với biểu đồ thời gian thực và chế độ tương tác cao.</p>
+                        <div class="tech-stack"><span>HTML5</span><span>CSS Grid</span><span>JS ES6</span></div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="tool">
+                    <div class="card-thumb">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="Code Snippet Manager">
+                        <div class="card-overlay">
+                            <button class="quick-view-btn" data-modal="modal-2"><i class="fas fa-expand"></i> XEM CHI TIẾT</button>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag">Tool</span>
+                        <h3>Smart Code Manager</h3>
+                        <p>Ứng dụng quản lý các đoạn mã nguồn ngắn, cho phép lưu trữ và tìm kiếm tức thì qua LocalStorage.</p>
+                        <div class="tech-stack"><span>HTML5</span><span>CSS3</span><span>DOM JS</span></div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="web">
+                    <div class="card-thumb">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" alt="Library Management System">
+                        <div class="card-overlay">
+                            <button class="quick-view-btn" data-modal="modal-3"><i class="fas fa-expand"></i> XEM CHI TIẾT</button>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag">Web App</span>
+                        <h3>Hệ Thống Quản Lý Thư Viện</h3>
+                        <p>Nền tảng trực tuyến hỗ trợ sinh viên tra cứu giáo trình, đặt mượn sách và theo dõi lịch trả tự động.</p>
+                        <div class="tech-stack"><span>Java</span><span>MySQL</span><span>Bootstrap</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- NÂNG CẤP 1: CỬA SỔ TERMINAL INTERACTIVE CLI -->
+        <section id="cli" class="cli-section">
+            <h2 class="section-title" data-text="INTERACTIVE TERMINAL">INTERACTIVE TERMINAL</h2>
+            <div class="interactive-terminal">
+                <div class="terminal-header">
+                    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                    <span class="term-title">system_shell.exe - Type 'help' for available commands</span>
+                </div>
+                <div class="cli-body" id="cli-output">
+                    <p class="cli-line">Welcome to TanPhat OS [Version 2.0.26]</p>
+                    <p class="cli-line">Gõ <span class="cmd-highlight">'help'</span> để xem danh sách các câu lệnh điều khiển.</p>
+                </div>
+                <div class="cli-input-line">
+                    <span class="cli-prompt">visitor@tanphat-dev:~$</span>
+                    <input type="text" id="cli-input" autofocus autocomplete="off" spellcheck="false" placeholder="Nhập lệnh ở đây...">
+                </div>
+            </div>
+        </section>
+
+        <!-- Chứng chỉ & Sở thích -->
+        <section id="achievements" class="achieve-section">
+            <h2 class="section-title" data-text="CHỨNG CHỈ & SỞ THÍCH">CHỨNG CHỈ & SỞ THÍCH</h2>
+
+            <div class="achieve-container">
+                <div class="achieve-card">
+                    <h3><i class="fas fa-award"></i> CHỨNG CHỈ & GIẢI THƯỞNG</h3>
+                    <ul class="cyber-list">
+                        <li>
+                            <i class="fas fa-angle-right"></i> 
+                            <strong>Responsive Web Design Certificate</strong> (FreeCodeCamp - 2025)
+                            <button class="view-cert-btn" data-modal="cert-modal-1"><i class="fas fa-eye"></i> Xem ảnh</button>
+                        </li>
+                        <li>
+                            <i class="fas fa-angle-right"></i> 
+                            <strong>Giải Khuyến Khích Hackathon Sinh Viên UBD</strong> (2025)
+                            <button class="view-cert-btn" data-modal="cert-modal-2"><i class="fas fa-eye"></i> Xem ảnh</button>
+                        </li>
+                        <li>
+                            <i class="fas fa-angle-right"></i> 
+                            <strong>Chứng chỉ Tiếng Anh B2 / TOEIC 750+</strong> (2025)
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="achieve-card">
+                    <h3><i class="fas fa-gamepad"></i> SỞ THÍCH CÁ NHÂN</h3>
+                    <ul class="cyber-list">
+                        <li><i class="fas fa-angle-right"></i> Nghiên cứu các xu hướng thiết kế UI/UX mới.</li>
+                        <li><i class="fas fa-angle-right"></i> Chơi các tựa game đồ họa thế giới mở (Cyberpunk 2077, Sci-Fi games).</li>
+                        <li><i class="fas fa-angle-right"></i> Tìm hiểu phần cứng máy tính và nghe nhạc Lofi/Synthwave.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form liên hệ & Thông tin cá nhân -->
+        <section id="contact" class="contact-section">
+            <h2 class="section-title" data-text="KẾT NỐI VỚI TÔI">KẾT NỐI VỚI TÔI</h2>
+
+            <div class="contact-grid">
+                <div class="contact-info-card">
+                    <h3><i class="fas fa-address-card"></i> THÔNG TIN LIÊN HỆ</h3>
+                    <p class="contact-desc">Rất hân hạnh được hợp tác và trao đổi cùng bạn. Hãy liên hệ với tôi qua các kênh dưới đây!</p>
+                    
+                    <div class="contact-details">
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Địa chỉ:</strong>
+                                <p>Thành phố Thủ Dầu Một, Tỉnh Bình Dương</p>
+                            </div>
+                        </div>
+
+                        <div class="detail-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email:</strong>
+                                <p>phantanphat.dev@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="detail-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <strong>Điện thoại:</strong>
+                                <p>+84 987 654 321</p>
+                            </div>
+                        </div>
+
+                        <div class="detail-item">
+                            <i class="fas fa-university"></i>
+                            <div>
+                                <strong>Trường học:</strong>
+                                <p>Đại học Bình Dương (Khoa CNTT)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
+                    </div>
+
+                    <!-- Khung Google Maps -->
+                    <div class="map-box">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.76101166373!2d106.6718104!3d10.9813878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d11933df9edd%3A0xe74ec576c52a0d9f!2zxJDhuqFpIGjhu41jIELDrG5oIETGsMahbmc!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s" 
+                            width="100%" 
+                            height="160" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="contact-form-card">
+                    <form id="cyber-form" class="cyber-form" novalidate>
+                        <div class="input-group">
+                            <label for="username">HỌ VÀ TÊN //</label>
+                            <input type="text" id="username" placeholder="Nhập họ và tên...">
+                            <span class="err-msg"></span>
+                        </div>
+                        <div class="input-group">
+                            <label for="email">EMAIL LIÊN HỆ //</label>
+                            <input type="email" id="email" placeholder="example@domain.com">
+                            <span class="err-msg"></span>
+                        </div>
+                        <div class="input-group">
+                            <label for="message">NỘI DUNG TIN NHẮN //</label>
+                            <textarea id="message" rows="5" placeholder="Nhập nội dung..."></textarea>
+                            <span class="err-msg"></span>
+                        </div>
+                        <button type="submit" class="cyber-btn primary full-width">KÍCH HOẠT GỬI TIN <i class="fas fa-paper-plane"></i></button>
+                        <div id="form-feedback" class="form-feedback"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Popup Chi tiết Dự án -->
+    <div id="modal-1" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Cyberpunk Dashboard UI</h2>
+            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="Cyber Dashboard Large">
+            <p>Dự án thiết kế bộ dashboard giả lập điều khiển trung tâm dữ liệu. Tích hợp biểu đồ Chart.js và giao diện đổi màu Neon tuỳ chỉnh.</p>
+            <p><strong>Công nghệ:</strong> HTML5, CSS Grid/Flexbox, JavaScript ES6.</p>
+        </div>
+    </div>
+
+    <div id="modal-2" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Smart Code Manager</h2>
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Code Manager Large">
+            <p>Công cụ quản lý snippet cá nhân hỗ trợ sao chép nhanh với 1-click, lọc tag tìm kiếm và sao lưu dữ liệu xuống trình duyệt.</p>
+            <p><strong>Công nghệ:</strong> HTML5, CSS Variables, JavaScript LocalStorage.</p>
+        </div>
+    </div>
+
+    <div id="modal-3" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Hệ Thống Quản Lý Thư Viện</h2>
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" alt="Library System Large">
+            <p>Ứng dụng quản lý thư viện sinh viên trực tuyến, cho phép phân loại danh mục tài liệu, mã hóa ID độc giả và tự động thông báo hạn trả sách.</p>
+            <p><strong>Công nghệ:</strong> Java Core, MySQL Database, Bootstrap 5 UI.</p>
+        </div>
+    </div>
+
+    <!-- Modals Xem Chứng Chỉ -->
+    <div id="cert-modal-1" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Responsive Web Design Certificate</h2>
+            <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=800&q=80" alt="Cert 1">
+            <p>Chứng chỉ hoàn thành khóa học lập trình giao diện Web đáp ứng từ FreeCodeCamp (2025).</p>
+        </div>
+    </div>
+
+    <div id="cert-modal-2" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Giải Khuyến Khích Hackathon UBD 2025</h2>
+            <img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=800&q=80" alt="Cert 2">
+            <p>Bằng khen cuộc thi sáng tạo sản phẩm công nghệ sinh viên Đại học Bình Dương.</p>
+        </div>
+    </div>
+
+    <!-- NÂNG CẤP 2: TRÌNH PHÁT NHẠC CYBERPUNK MINI -->
+    <div class="cyber-player">
+        <button id="player-toggle-btn" class="player-btn"><i class="fas fa-music"></i></button>
+        <div class="player-controls" id="player-controls">
+            <span class="track-title">Synthwave Radio - Cyber Beats</span>
+            <button id="play-pause-btn"><i class="fas fa-play"></i></button>
+        </div>
+    </div>
+
+    <!-- Scroll-to-Top Button -->
+    <button id="scroll-top" class="scroll-top" title="Lên đầu trang"><i class="fas fa-arrow-up"></i></button>
+
+    <footer>
+        <p>&copy; 2026 PHAN TẤN PHÁT // SYSTEM PORTFOLIO. ALL RIGHTS RESERVED.</p>
+        <!-- NÂNG CẤP 4: BỘ ĐẾM LƯỢT GHÉ THĂM -->
+        <p class="visit-counter">SYSTEM VISITS: <span id="visit-count">001,042</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
